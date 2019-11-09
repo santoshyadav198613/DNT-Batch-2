@@ -1,0 +1,32 @@
+<h1>
+  <!-- interpolation -->
+  Employee Name : {{name}}
+</h1>
+<!-- Property Binding / Box Syntax -->
+<div [hidden]="toggleDiv" [innerText]="age"></div>
+<!-- Event Binding / Banana Syntax -->
+<button (click)="toggle()">Toggle</button>
+
+
+{{employeeList | json}}
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>DOB</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employeeList">
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.email}}</td>
+      <td>{{emp.dob}}</td>
+      <td>{{emp.salary}}</td>
+    </tr>
+  </tbody>
+</table>
