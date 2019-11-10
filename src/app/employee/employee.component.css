@@ -1,3 +1,11 @@
 h1 {
   color: steelblue;
 }
+
+.even {
+  background-color: steelblue;
+}
+
+.odd {
+  background-color: skyblue;
+}

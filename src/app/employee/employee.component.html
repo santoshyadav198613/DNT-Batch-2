@@ -1,18 +1,34 @@
+<app-header></app-header>
+
+<div #templateDemo>
+
+</div>
+
 <h1>
   <!-- interpolation -->
   Employee Name : {{name}}
 </h1>
 <!-- Property Binding / Box Syntax -->
-<div [hidden]="toggleDiv" [innerText]="age"></div>
+<!-- <div [hidden]="toggleDiv" [innerText]="age"></div> -->
+
+<div *ngIf="toggleDiv" [innerText]="age"></div>
 <!-- Event Binding / Banana Syntax -->
 <button (click)="toggle()">Toggle</button>
 
+<div *ngIf="selectedEmployee">
+  {{selectedEmployee | json}}
+</div>
 
 {{employeeList | json}}
-
-<table>
+<app-employee-list [empList]="employeeList" (selectedEmployee)="receiveFromChild($event)">
+</app-employee-list>
+<!--
+<table class="table">
   <thead>
     <tr>
+      <th>Index</th>
+      <th>Even</th>
+      <th>Odd</th>
       <th>ID</th>
       <th>Name</th>
       <th>Email</th>
@@ -21,7 +37,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let emp of employeeList">
+    <tr [ngClass]="e ? 'even': 'odd'"
+      *ngFor="let emp of employeeList;let i=index; let e=even; let o=odd; trackBy: trackByFn">
+      <td>{{i}}</td>
+      <td>{{e}}</td>
+      <td>{{o}}</td>
       <td>{{emp.id}}</td>
       <td>{{emp.name}}</td>
       <td>{{emp.email}}</td>
@@ -29,4 +49,4 @@
       <td>{{emp.salary}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
