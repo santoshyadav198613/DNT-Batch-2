@@ -11,19 +11,21 @@
 <!-- Property Binding / Box Syntax -->
 <!-- <div [hidden]="toggleDiv" [innerText]="age"></div> -->
 
-<div *ngIf="toggleDiv" [innerText]="age"></div>
+<!-- <div *ngIf="toggleDiv" [innerText]="age"></div> -->
 <!-- Event Binding / Banana Syntax -->
-<button (click)="toggle()">Toggle</button>
+<!-- <button (click)="toggle()">Toggle</button> -->
 
-<div *ngIf="selectedEmployee">
+<!-- <div *ngIf="selectedEmployee">
   {{selectedEmployee | json}}
-</div>
+</div> -->
 
 {{employeeList | json}}
 <app-employee-list [empList]="employeeList" (selectedEmployee)="receiveFromChild($event)">
 </app-employee-list>
 
-<button type="button" class="btn btn-success" (click)="addEmp()">Add Employee</button>
+<!-- <button type="button" class="btn btn-success" (click)="addEmp()">Add Employee</button> -->
+<app-employee-add></app-employee-add>
+
 <!--
 <table class="table">
   <thead>

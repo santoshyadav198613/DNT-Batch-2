@@ -1,0 +1,33 @@
+{{empModel | json}}
+{{empForm.invalid | json }}
+{{empForm.valid | json }}
+{{empForm.pristine | json }}
+{{empForm.dirty | json }}
+{{empForm.errors | json }}
+<form #empForm="ngForm" (submit)="addEmp(empForm)">
+  <div class="form-group">
+    <input required class="form-control" type="number" [(ngModel)]="empModel.id" name="empid" placeholder="Employee Id">
+  </div>
+
+  <div class="form-group">
+      <input required minlength="5" maxlength="20" #empname="ngModel" class="form-control" type="text" [(ngModel)]="empModel.name" name="empname" placeholder="Employee Name">
+    <div *ngIf="!empname.pristine && empname?.errors?.required">
+      Please provide name
+    </div>
+    </div>
+
+  <div class="form-group">
+      <input class="form-control" type="datetime" [(ngModel)]="empModel.dob" name="dob" placeholder="Employee DOB">
+  </div>
+
+  <div class="form-group">
+      <input required class="form-control" type="email" [(ngModel)]="empModel.email" name="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+      <input required class="form-control" type="number" [(ngModel)]="empModel.salary" name="salary" placeholder="Salary">
+  </div>
+
+  <div>
+      <button [disabled]="empForm.invalid" type="submit" class="btn btn-success">Add Employee</button>
+  </div>
+</form>

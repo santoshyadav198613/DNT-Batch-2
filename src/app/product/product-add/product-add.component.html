@@ -1,0 +1,53 @@
+{{productForm.invalid | json}}
+{{productForm.valid | json}}
+{{productForm.pristine | json}}
+{{productForm.dirty | json}}
+{{productForm.value | json}}
+<form [formGroup]="productForm">
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="name" placeholder="Product Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="number" formControlName="price" placeholder="Product Price">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="number" formControlName="qty" placeholder="Product Quantity">
+  </div>
+  <div formGroupName="spec">
+    <div class="form-group">
+      <input class="form-control" type="number" formControlName="height" placeholder="Product Height">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="number" formControlName="weight" placeholder="Product weight">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="number" formControlName="validity" placeholder="Validity">
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-success" (click)="addSeller()">Add Seller</button>
+  </div>
+  <div formArrayName="seller">
+    <div *ngFor="let control of seller.controls;let i=index">
+      <div [formGroupName]="i">
+          <div class="form-group">
+              <input class="form-control" type="text" formControlName="sellerName" placeholder="Seller Name">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" formControlName="sellerAddress" placeholder="Seller Address">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" formControlName="pan" placeholder="PAN">
+            </div>
+      </div>
+      <div>
+        <button class="btn btn-danger" (click)="removeSeller(i)">Remove Seller</button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary" [disabled]="productForm.invalid" type="submit">Add Product</button>
+  </div>
+
+
+</form>
