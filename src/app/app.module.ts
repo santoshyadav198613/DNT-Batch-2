@@ -10,10 +10,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductComponent } from './product/product.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { HeaderComponent } from './header/header.component';
-import { TodosComponent } from './todos/todos.component';
-import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { EmployeeAddComponent } from './employee/employee-add/employee-add.component';
 import { ProductAddComponent } from './product/product-add/product-add.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +29,11 @@ import { ProductAddComponent } from './product/product-add/product-add.component
     ProductComponent,
     EmployeeListComponent,
     HeaderComponent,
-    TodosComponent,
-    TodoListComponent,
     EmployeeAddComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    MainNavComponent,
+    PagenotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,13 @@ import { ProductAddComponent } from './product/product-add/product-add.component
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,4 +21,8 @@ export class TodoService {
     };
     return this.http.post('https://jsonplaceholder.typicode.com/todos', todo);
   }
+
+  getTodoById(id: number) {
+    return this.http.get('https://jsonplaceholder.typicode.com/todos/' + id);
+  }
 }
