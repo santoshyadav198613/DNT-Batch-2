@@ -5,8 +5,15 @@ import { TodoDetailsComponent } from './todo-details/todo-details.component';
 
 
 const routes: Routes = [
-  { path: '', component: TodosComponent },
-  { path: ':id', component: TodoDetailsComponent },
+  {
+    path: '', component: TodosComponent, children: [
+      { path: ':id', component: TodoDetailsComponent }
+    ],
+    data: {
+      pageName: 'Todo',
+      pageTitle: 'Todos'
+    }
+  }
 ];
 
 @NgModule({
