@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from './services/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder,
+    private router: Router,
+    private loginService: LoginService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -18,10 +21,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.loginForm.get('userName').value === 'Admin' &&
-      this.loginForm.get('password').value === 'Admin') {
-      // redirect to employee
-          this.router.navigate(['/employee']);
+    if (this.loginService.login(this.loginForm.get('userName').value, this.loginForm.get('password').value)) {
+      this.router.navigate(['/employee']);
     }
+    // if (this.loginForm.get('userName').value === 'Admin' &&
+    //   this.loginForm.get('password').value === 'Admin') {
+    //   // redirect to employee
+    //       this.router.navigate(['/employee']);
+    // }
   }
 }

@@ -1,4 +1,5 @@
 <router-outlet></router-outlet>
-<app-todo-list [todoList]="todos$ | async"></app-todo-list>
-
+<input class="form-control" type="text" [formControl]="searchTitle" placeholder="Search By Title">
+<!-- <app-todo-list [todoList]="todos$ | async"></app-todo-list> -->
+<app-todo-list [todoList]="todo | title : searchTitle.value"></app-todo-list>
 <button class="btn btn-primary" (click)="addTodo()">Add Todo</button>

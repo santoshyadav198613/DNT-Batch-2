@@ -21,11 +21,11 @@
       <td>{{i}}</td>
       <td>{{e}}</td>
       <td>{{o}}</td>
-      <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
-      <td>{{emp.email}}</td>
-      <td>{{emp.dob}}</td>
-      <td>{{emp.salary}}</td>
+      <td>{{emp.id | percent}}</td>
+      <td>{{emp.name | uppercase}}</td>
+      <td>{{emp.email | lowercase}}</td>
+      <td>{{emp.dob | date : 'dd-MMM-yyyy'| lowercase}}</td>
+      <td>{{emp.salary | currency : 'INR'}}</td>
       <td><button class="btn btn-success" (click)="currentEmployee(emp)">Select</button></td>
     </tr>
   </tbody>

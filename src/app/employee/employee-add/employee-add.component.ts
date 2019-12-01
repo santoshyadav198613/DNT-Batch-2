@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class EmployeeAddComponent implements OnInit {
 
+  formPristineState = false;
   empModel : IEmployee = {
     id: 0,
     name: '',
@@ -24,6 +25,7 @@ export class EmployeeAddComponent implements OnInit {
   addEmp(empForm: NgForm) {
     console.log(this.empModel);
     empForm.resetForm();
+    this.formPristineState = true;
   }
 
 }

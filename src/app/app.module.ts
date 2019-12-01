@@ -5,12 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeComponent } from './employee/employee.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductComponent } from './product/product.component';
-import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+
 import { HeaderComponent } from './header/header.component';
-import { EmployeeAddComponent } from './employee/employee-add/employee-add.component';
 import { ProductAddComponent } from './product/product-add/product-add.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -21,22 +20,23 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
+import { EmployeeModule } from './employee/employee.module';
+import { HoverDirective } from './directives/hover.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent,
     ProductComponent,
-    EmployeeListComponent,
     HeaderComponent,
-    EmployeeAddComponent,
     ProductAddComponent,
     MainNavComponent,
     PagenotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
+    EmployeeModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

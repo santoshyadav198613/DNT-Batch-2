@@ -15,7 +15,7 @@
       <td>{{todo.id}}</td>
       <td>{{todo.userId}}</td>
       <td>{{todo.title}}</td>
-      <td>{{todo.completed}}</td>
+      <td>{{todo.completed | status}}</td>
       <td>
         <button class="btn btn-success" [routerLink]="['/todos', todo.id]">Details</button>
       </td>

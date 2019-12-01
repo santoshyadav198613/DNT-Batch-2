@@ -3,6 +3,7 @@ import { TodoService } from './services/todo.service';
 import { Subscription, Observable } from 'rxjs';
 import { ITodo } from './services/ITodo';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-todos',
@@ -12,19 +13,23 @@ import { ActivatedRoute } from '@angular/router';
 export class TodosComponent implements OnInit, OnDestroy {
 
   todoSubscription: Subscription;
-  todos$ : Observable<ITodo[]>;
-
-  constructor(private todoService: TodoService, private route: ActivatedRoute) { }
+  // todos$: Observable<ITodo[]>;
+  todo: ITodo[];
+  searchTitle: FormControl;
+  constructor(private todoService: TodoService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.data.subscribe((data)=> console.log(data['pageName']));
-    this.todos$ = this.todoService.getTodos();
+    this.searchTitle = new FormControl('');
+    this.route.data.subscribe((data) => console.log(data['pageName']));
+    this.route.data.subscribe((res) => this.todo = res['todoList']);
+    // this.todos$ = this.todoService.getTodos();
     // this.todoSubscription = this.todoService.getTodos().subscribe((data) => console.log(data));
 
   }
 
   addTodo() {
-    this.todoService.addTodo().subscribe((data)=> console.log(data));
+    this.todoService.addTodo().subscribe((data) => console.log(data));
   }
 
   ngOnDestroy() {
