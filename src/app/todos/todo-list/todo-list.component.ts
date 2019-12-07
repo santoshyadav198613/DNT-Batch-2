@@ -9,7 +9,7 @@ import { ITodo } from '../services/ITodo';
 })
 export class TodoListComponent implements OnInit {
 
-  @Input() todoList : ITodo[] = [];
+  @Input() todoList: ITodo[] = [];
   constructor() { }
 
   ngOnInit() {

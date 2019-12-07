@@ -17,12 +17,12 @@ export class TodosComponent implements OnInit, OnDestroy {
   todo: ITodo[];
   searchTitle: FormControl;
   constructor(private todoService: TodoService,
-    private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.searchTitle = new FormControl('');
-    this.route.data.subscribe((data) => console.log(data['pageName']));
-    this.route.data.subscribe((res) => this.todo = res['todoList']);
+    this.route.data.subscribe((data) => console.log(data.pageName));
+    this.route.data.subscribe((res) => this.todo = res.todoList);
     // this.todos$ = this.todoService.getTodos();
     // this.todoSubscription = this.todoService.getTodos().subscribe((data) => console.log(data));
 

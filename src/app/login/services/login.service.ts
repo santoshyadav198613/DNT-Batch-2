@@ -14,8 +14,7 @@ export class LoginService {
     if (userName === 'Admin' && password === 'Admin') {
       this.isAdmin = true;
       this.isLoggedIn = true;
-    }
-    else if (userName === 'User' && password === 'User') {
+    } else if (userName === 'User' && password === 'User') {
       this.isAdmin = false;
       this.isLoggedIn = true;
     }

@@ -12,7 +12,7 @@ export class HoverDirective implements OnInit {
   @Input('appHover') color: string;
 
   constructor(private element: ElementRef,
-    private renderer: Renderer2) { }
+              private renderer: Renderer2) { }
 
   ngOnInit() {
     console.log(this.element.nativeElement);

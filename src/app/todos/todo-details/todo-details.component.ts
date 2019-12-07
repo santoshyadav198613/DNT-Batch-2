@@ -10,14 +10,14 @@ export class TodoDetailsComponent implements OnInit {
 
   todoId: number;
   constructor(private route: ActivatedRoute,
-    private todoService: TodoService) { }
+              private todoService: TodoService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(data => {
       this.todoId = + data.get('id');
       this.todoService.getTodoById(this.todoId).subscribe(
         (data) => console.log(data)
-      )
+      );
     });
   }
 

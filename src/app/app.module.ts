@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxTestLibModule } from 'ngx-test-lib';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeeModule } from './employee/employee.module';
 import { HoverDirective } from './directives/hover.directive';
+import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { HoverDirective } from './directives/hover.directive';
   imports: [
     BrowserModule,
     EmployeeModule,
+    PostsModule,
+    NgxTestLibModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

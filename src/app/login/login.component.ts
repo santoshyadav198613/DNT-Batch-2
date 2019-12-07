@@ -8,10 +8,10 @@ import { LoginService } from './services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup
+  loginForm: FormGroup;
   constructor(private fb: FormBuilder,
-    private router: Router,
-    private loginService: LoginService) { }
+              private router: Router,
+              private loginService: LoginService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({

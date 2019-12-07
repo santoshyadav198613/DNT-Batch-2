@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 export class EmployeeAddComponent implements OnInit {
 
   formPristineState = false;
-  empModel : IEmployee = {
+  empModel: IEmployee = {
     id: 0,
     name: '',
     dob : new Date(),

@@ -22,7 +22,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
 
   @ViewChild('templateDemo', { static: true }) template: ElementRef;
 
-  name: string = 'Amit';
+  name = 'Amit';
   age = 48;
   departmentName = 'Technology';
 

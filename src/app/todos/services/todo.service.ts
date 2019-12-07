@@ -14,9 +14,9 @@ export class TodoService {
   }
 
   addTodo() {
-    let todo = {
+    const todo = {
       userId: 10,
-      title: "Complete Angular Course",
+      title: 'Complete Angular Course',
       completed: false
     };
     return this.http.post('https://jsonplaceholder.typicode.com/todos', todo);

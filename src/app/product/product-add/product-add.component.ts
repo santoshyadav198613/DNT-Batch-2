@@ -16,7 +16,7 @@ export class ProductAddComponent implements OnInit {
 
   ngOnInit() {
     this.productForm = this.fb.group({
-      name: new FormControl({ value:'', disabled: true  }, [Validators.required, Validators.minLength(10), Validators.maxLength(20)]),
+      name: new FormControl({ value: '', disabled: true  }, [Validators.required, Validators.minLength(10), Validators.maxLength(20)]),
       price: new FormControl('', [Validators.required]),
       qty: new FormControl(''),
       spec: this.fb.group({
@@ -44,12 +44,12 @@ export class ProductAddComponent implements OnInit {
       seller: [
         {
           sellerName: 'Amazon',
-          sellerAddress:'ac.vom',
+          sellerAddress: 'ac.vom',
           pan: 'gfdgfdg'
         },
         {
           sellerName: 'flipkart',
-          sellerAddress:'dsjfghfg',
+          sellerAddress: 'dsjfghfg',
           pan: 'gffldj'
         }
       ]

@@ -23,7 +23,7 @@ export class EmployeeService {
   }
 
   addEmployee() {
-    let emp: IEmployee =  { id: 1, name: 'user1', email: 'user1@test.com', dob: new Date('11-Feb-2018'), salary: 45000 };
+    const emp: IEmployee =  { id: 1, name: 'user1', email: 'user1@test.com', dob: new Date('11-Feb-2018'), salary: 45000 };
     this.empList.push(emp);
   }
 }
